@@ -1,0 +1,65 @@
+.THEME_NAME {
+  &.cq-input-container {
+    &.cq-input-invalid {
+      &:after {
+        background-color: #{'WARN-COLOR'};
+      }
+
+      label,
+      input,
+      textarea,
+      .cq-error,
+      .cq-count,
+      .cq-icon:not(.cq-icon-delete) {
+        color: #{'WARN-COLOR'};
+      }
+    }
+
+    &.cq-input-focused {
+      &.cq-input-inline {
+        label {
+          color: rgba(#000, .54);
+        }
+      }
+
+      &.cq-input-required {
+        label:after {
+          color: #{'WARN-COLOR'};
+        }
+      }
+
+      &:after {
+        height: 2px;
+        background-color: #{'PRIMARY-COLOR'};
+      }
+
+      input,
+      textarea {
+        color: #{'PRIMARY-COLOR'};
+        text-shadow: 0 0 0 #{'BACKGROUND-CONTRAST'};
+        -webkit-text-fill-color: transparent;
+      }
+
+      label,
+      .cq-icon:not(.cq-icon-delete) {
+        color: #{'PRIMARY-COLOR'};
+      }
+    }
+
+    &.cq-input-disabled {
+      label,
+      input,
+      textarea,
+      .cq-error,
+      .cq-count,
+      .cq-icon:not(.cq-icon-delete),
+      ::-webkit-input-placeholder {
+        color: #{'BACKGROUND-CONTRAST-0.38'};
+      }
+    }
+
+    .cq-icon:not(.cq-icon-delete):after {
+      background: #{'BACKGROUND-COLOR'};
+    }
+  }
+}

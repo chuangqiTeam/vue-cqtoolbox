@@ -1,0 +1,90 @@
+/*  Text and Titles
+   ========================================================================== */
+
+.cq-caption {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .02em;
+  line-height: 17px;
+}
+
+.cq-body-1 {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 20px;
+}
+
+.cq-body-2 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  line-height: 24px;
+}
+
+.cq-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 24px;
+}
+
+.cq-title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: .005em;
+  line-height: 26px;
+}
+
+.cq-headline {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 32px;
+}
+
+.cq-display-1 {
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 40px;
+}
+
+.cq-display-2 {
+  font-size: 45px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 48px;
+}
+
+.cq-display-3 {
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: -.005em;
+  line-height: 58px;
+}
+
+.cq-display-4 {
+  font-size: 112px;
+  font-weight: 300;
+  letter-spacing: -.01em;
+  line-height: 112px;
+}
+
+
+/*  Links & Buttons
+   ========================================================================== */
+
+a:not(.cq-button):not(.cq-bottom-bar-item) {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,94 @@
+@import '../../core/styles/variables.scss';
+
+$switch-width: 34px;
+$switch-height: 14px;
+$switch-thumb-size: 20px;
+$switch-ripple-size: 48px;
+
+.cq-switch {
+  width: auto;
+  margin: 16px 8px 16px 0;
+  display: inline-flex;
+  position: relative;
+
+  .cq-switch-container {
+    width: $switch-width;
+    height: $switch-height;
+    position: relative;
+    border-radius: $switch-height;
+    transition: $swift-ease-out;
+    background-color: rgba(#000, .38);
+
+    .cq-switch-thumb {
+      width: $switch-thumb-size;
+      height: $switch-thumb-size;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background-color: #fafafa;
+      border-radius: 50%;
+      box-shadow: $material-shadow-1dp;
+      transition: $swift-linear;
+    }
+
+    input {
+      position: absolute;
+      left: -999em;
+    }
+
+    .cq-ink-ripple {
+      top: -16px;
+      right: -16px;
+      bottom: -16px;
+      left: -16px;
+      border-radius: 50%;
+      color: rgba(#000, .54);
+
+      .cq-ripple {
+        width: $switch-ripple-size !important;
+        height: $switch-ripple-size !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+      }
+    }
+
+    .cq-switch-holder {
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      //cursor: -webkit-grab;
+      background: none;
+      border: none;
+      transform: translate(-50%, -50%);
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .cq-switch-label {
+    height: $switch-height;
+    padding-left: 8px;
+    line-height: $switch-height;
+  }
+}
+
+.cq-switch.cq-dragging {
+  .cq-switch-thumb {
+    cursor: grabbing;
+  }
+}
+
+.cq-switch.cq-disabled {
+  .cq-switch-thumb {
+    cursor: default;
+  }
+}
