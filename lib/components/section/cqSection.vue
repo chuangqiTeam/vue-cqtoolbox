@@ -1,10 +1,10 @@
 <template>
-  <div :class="[className, $style.main]">
-    <div :class="$style.boxShadow">
-      <span :class="[$style.tip, $style.inlineBlock]"></span>
-      <h2 :class="$style.inlineBlock">{{title}}</h2>
+  <div :class="[className]">
+    <div class="cq-section-head">
+      <span class="cq-section-tip"></span>
+      <h2 class="cq-section-title">{{title}}</h2>
     </div>
-    <div :class="$style.padding_20">
+    <div class="cq-section-content">
       <slot></slot>
     </div>
   </div>
@@ -27,27 +27,29 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
-.main{
+<style lang="scss">
+.cq-section{
   background: white;
   margin: 10px 10px 0;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  .cq-section-head{
+    box-shadow: 0 1px 0px #f1f1f1;
+    .cq-section-tip{
+      width: 4px;
+      height: 18px;
+      margin-right: 6px;
+      background-color: #00bcd4;
+      display: inline-block;
+    }
+    .cq-section-title{
+      display: inline-block;
+    }
+  }
+  .cq-section-content{
+    padding: 20px;
+  }
 }
-.inline-block{
-  display: inline-block;
-}
-.tip{
-  width: 4px;
-  height: 18px;
-  margin-right: 6px;
-  background-color: #00bcd4;
-}
-.box-shadow{
-  box-shadow: 0 1px 0px #f1f1f1;
-}
-.padding_20{
-  padding: 20px;
-}
+
 </style>

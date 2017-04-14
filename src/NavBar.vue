@@ -11,28 +11,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-@media screen and (min-width: 1000px) {
-  .container {
-    margin: 0 auto;
-    max-width: 840px;
-  }
-}
-@media screen and (min-width: 1192px) {
-  .container {
-    max-width: 1008px;
-  }
-}
-@media screen and (min-width: 1384px) {
-  .container {
-    max-width: 1176px;
-  }
-}
 .nav{
   height: 52px;
   width: 100vw;

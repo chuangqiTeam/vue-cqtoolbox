@@ -45,18 +45,14 @@ export default merge(baseConfig, {
         options: {
           loaders: {
             css: ExtractTextPlugin.extract({
-              use: 'css-loader?modules',
+              use: 'css-loader',
               fallback: 'vue-style-loader'
             }),
             scss: ExtractTextPlugin.extract({
-              use: 'css-loader?modules!sass-loader',
+              use: 'css-loader!sass-loader',
               fallback: 'vue-style-loader'
             })
           },
-          cssModules: {
-            localIdentName: '[name]-[local]-[hash:base64:5]',
-            camelCase: true
-          }
           postcss: [
             autoprefixer({
               browsers: [
@@ -73,14 +69,14 @@ export default merge(baseConfig, {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          use: 'css-loader?modules',
+          use: 'css-loader',
           fallback: 'vue-style-loader'
         })
       },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
-          use: 'css-loader?modules!sass-loader',
+          use: 'css-loader!sass-loader',
           fallback: 'vue-style-loader'
         })
       }
