@@ -1,76 +1,127 @@
-<template>
-  <div id="app">
-    <!-- <navbar></navbar> -->
-    <div class="nav">
-      <div class="container">
-        <img class="is-hidden-tablet" src="~assets/img/nav-logo.png" alt="logo">
-      </div>
-    </div>
-    <app-main></app-main>
-    <!-- <footer-bar></footer-bar> -->
+<template lang="html">
+  <div class="main">
+    <nav-bar></nav-bar>
+    <cq-section title="按钮 (Button)">
+      <cq-button>中文</cq-button>
+      <cq-button class="cq-raised" href="http://www.baidu.com">中文</cq-button>
+      <cq-button class="cq-primary">中文</cq-button>
+      <cq-button class="cq-primary cq-raised">中文</cq-button>
+      <cq-button class="cq-accent cq-raised">中文</cq-button>
+      <cq-button class="cq-warn cq-raised">中文</cq-button>
+      <br/><br/>
+
+      <cq-button-group class="cq-primary">
+        <cq-button class="cq-toggle">中文</cq-button>
+        <cq-button class="cq-toggle">EN</cq-button>
+        <cq-button class="cq-toggle">其他</cq-button>
+      </cq-button-group>
+      <cq-button-group class="cq-accent" single>
+        <cq-button>中文</cq-button>
+        <cq-button disabled>EN</cq-button>
+        <cq-button class="cq-toggle">其他</cq-button>
+      </cq-button-group>
+      <cq-button class="cq-icon-button"> + </cq-button>
+      <cq-button class="cq-icon-button cq-raised"> + </cq-button>
+      <cq-button class="cq-icon-button cq-primary cq-raised"> + </cq-button>
+      <cq-button class="cq-icon-button cq-accent cq-raised"> + </cq-button>
+      <cq-button class="cq-icon-button cq-warn cq-raised"> + </cq-button>
+    </cq-section>
+
+    <cq-section title="图标 (fontIcon)">
+      <cq-icon class="cq-error">home</cq-icon>
+      <cq-icon cd-theme="green">email</cq-icon>
+      <cq-icon class="cq-primary" cq-iconset="fa fa-home"></cq-icon>
+      <cq-icon class="cq-primary" cq-iconset="fa fa-bars"></cq-icon>
+      <cq-icon class="cq-primary" cq-iconset="fa fa-users"></cq-icon>
+    </cq-section>
+
+    <cq-section title="输入框 (Input)">
+      <cq-input-container>
+        <label>账号</label>
+        <cq-input></cq-input>
+      </cq-input-container>
+      <cq-input-container cq-has-password>
+        <label>密码</label>
+        <cq-input type="password"></cq-input>
+      </cq-input-container>
+      <cq-input-container>
+        <cq-icon>phone</cq-icon>
+        <label>电话</label>
+        <cq-input></cq-input>
+      </cq-input-container>
+      <cq-input-container>
+        <cq-icon>email</cq-icon>
+        <label>邮箱</label>
+        <cq-input required></cq-input>
+      </cq-input-container>
+      <cq-input-container class="cq-input-invalid">
+        <cq-icon>home</cq-icon>
+        <label>公司</label>
+        <cq-input required></cq-input>
+        <span class="cq-error">公司信息是必须的</span>
+      </cq-input-container>
+      <cq-input-container>
+        <cq-icon>person</cq-icon>
+        <label>身份证</label>
+        <cq-input maxlength="18"></cq-input>
+      </cq-input-container>
+    </cq-section>
+
+    <cq-section title="开关 (Switch)">
+      <cq-switch v-model="switchValue">default</cq-switch>
+      <cq-switch class="cq-primary" v-model="switchValue">primary</cq-switch>
+      <cq-switch class="cq-warn" v-model="switchValue">warn</cq-switch>
+      <cq-switch disabled>disabled</cq-switch>
+    </cq-section>
+
+    <cq-section title="提示框 (Tooltip)">
+      <cq-button-group class="cq-primary">
+        <cq-button class="cq-toggle">
+          左
+          <cq-tooltip cq-direction="left">我是提示框</cq-tooltip>
+        </cq-button>
+        <cq-button class="cq-toggle">
+          上
+          <cq-tooltip cq-direction="top">我是提示框</cq-tooltip>
+        </cq-button>
+        <cq-button class="cq-toggle">
+          下
+          <cq-tooltip cq-direction="bottom">我是提示框</cq-tooltip>
+        </cq-button>
+        <cq-button class="cq-toggle">
+          右
+          <cq-tooltip cq-direction="right">我是提示框</cq-tooltip>
+        </cq-button>
+      </cq-button-group>
+    </cq-section>
   </div>
 </template>
 
 <script>
-// import Navbar from '@/components/Navbar'
-import AppMain from '@/components/AppMain'
-// import FooterBar from '@/components/FooterBar'
+import NavBar from './NavBar.vue'
 export default {
-  name: 'app',
   components: {
-    // Navbar,
-    // FooterBar,
-    AppMain
+    NavBar
+  },
+  data () {
+    return {
+      switchValue: true
+    }
   }
 }
 </script>
 
 <style lang="scss">
-// @import "~bulma";
-/* 自定义基础属性 */
-// @import "~scss/base.scss";
-/* 自定义样式 */
-// @import "~scss/style.scss";
-//
-.container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+$bg-color: #ebf0f0;
+body, html {
+  background: $bg-color;
 }
-@media screen and (min-width: 1000px) {
-  .container {
-    margin: 0 auto;
-    max-width: 840px;
-  }
+.main {
+  padding: 52px 0;
+  background: $bg-color;
+  transform: translate3d(0, 0, 0);
 }
-@media screen and (min-width: 1192px) {
-  .container {
-    max-width: 1008px;
-  }
-}
-@media screen and (min-width: 1384px) {
-  .container {
-    max-width: 1176px;
-  }
-}
-
-
-.nav{
-  height: 52px;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  background: linear-gradient(270deg, #1486a2, #154163);
-  .container{
-    justify-content: center;
-    height: 100%;
-    img{
-      margin-left: 50px;
-      height: 24.5px;
-      width: 126px;
-    }
-  }
+.content {
+  padding: 0;
 }
 </style>
